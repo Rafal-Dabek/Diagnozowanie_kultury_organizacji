@@ -827,12 +827,15 @@ var strUser = e.value;
           var point=id.slice(4, 5);
           if(id.length==6)point=10;
           var suma=0;
-
+          var numberOfSubsections=5;
+          var numberOfQuestions=10;
+          var numberOfPoints=5;
+          if(question==0)numberOfSubsections=6;
         
 
 
-        for(var k=1;k<5;k++){ //sumowanie
-          for(var l=0;l<5;l++){
+        for(var k=1;k<numberOfSubsections;k++){ //sumowanie
+          for(var l=0;l<numberOfPoints;l++){
            
             if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)
             {
@@ -843,8 +846,8 @@ var strUser = e.value;
           }
         }
         //czyszczenie 
-        for(var k=1;k<5;k++){ 
-          for(var l=0;l<5;l++){
+        for(var k=1;k<numberOfSubsections;k++){ 
+          for(var l=0;l<numberOfPoints;l++){
             
             
             if(parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value) + suma<=4)
@@ -859,8 +862,8 @@ var strUser = e.value;
         console.log(suma);
 
         //disabledowanie
-        for(var k=1;k<5;k++){ 
-          for(var l=0;l<5;l++){
+        for(var k=1;k<numberOfSubsections;k++){ 
+          for(var l=0;l<numberOfPoints;l++){
             
             
             if(parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value) + suma>4)
