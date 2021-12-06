@@ -1,3 +1,8 @@
+const numberOfSubsections=5;
+const numberOfQuestions=10;
+const numberOfPoints=5;
+var blockedRadio=[];
+
 function done2()
 {
 
@@ -826,16 +831,13 @@ var strUser = e.value;
           var point=id.slice(4, 5);
           if(id.length==6)point=10;
           var suma=0;
-          var numberOfSubsections=5;
-          var numberOfQuestions=10;
-          var numberOfPoints=5;
-          var blockedRadio=[];
-          if(question==0)numberOfSubsections=6;
+          
+          
         
 
 
         for(var k=1;k<numberOfSubsections;k++){  //sprawdzanie
-          for(var l=0;l<numberOfPoints;l++){
+          for(var l=1;l<numberOfPoints;l++){
            
             if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)
             {
@@ -848,7 +850,7 @@ var strUser = e.value;
         //console.log(blockedRadio)
         //czyszczenie 
         for(var k=1;k<numberOfSubsections;k++){ 
-          for(var l=0;l<numberOfPoints;l++){
+          for(var l=1;l<numberOfPoints;l++){
             
             
 
@@ -868,7 +870,7 @@ var strUser = e.value;
 
         //disabledowanie
         for(var k=1;k<numberOfSubsections;k++){ 
-          for(var l=0;l<numberOfPoints;l++){
+          for(var l=1;l<numberOfPoints;l++){
             
             
             for(i=0;i<blockedRadio.length;i++){
@@ -888,3 +890,17 @@ var strUser = e.value;
   
   
 }
+
+
+function reset(id) {
+
+  for(var k=1;k<numberOfSubsections;k++){//resetowanie
+    for(var l=1;l<numberOfPoints;l++){
+
+      document.getElementById(id + "_"+k.toString() +"_"+ l.toString()  ).disabled = false;
+      document.getElementById(id + "_"+k.toString() +"_"+ l.toString()  ).checked = false;
+      
+    }
+  }
+
+} 
