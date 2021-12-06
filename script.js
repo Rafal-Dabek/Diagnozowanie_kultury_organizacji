@@ -831,8 +831,8 @@ var strUser = e.value;
         
 
 
-        for(var k=1;k<9;k++){ //sumowanie
-          for(var l=0;l<11;l++){
+        for(var k=1;k<5;k++){ //sumowanie
+          for(var l=0;l<5;l++){
            
             if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)
             {
@@ -843,11 +843,11 @@ var strUser = e.value;
           }
         }
         //czyszczenie 
-        for(var k=1;k<9;k++){ 
-          for(var l=0;l<11;l++){
+        for(var k=1;k<5;k++){ 
+          for(var l=0;l<5;l++){
             
             
-            if(parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value) + suma<=10)
+            if(parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value) + suma<=4)
             {
               if(!document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled = false
             
@@ -859,11 +859,11 @@ var strUser = e.value;
         console.log(suma);
 
         //disabledowanie
-        for(var k=1;k<9;k++){ 
-          for(var l=0;l<11;l++){
+        for(var k=1;k<5;k++){ 
+          for(var l=0;l<5;l++){
             
             
-            if(parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value) + suma>10)
+            if(parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value) + suma>4)
             {
               if(!document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled = true
             
