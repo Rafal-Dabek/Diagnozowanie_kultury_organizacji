@@ -3,7 +3,84 @@ const numberOfQuestions=10;
 const numberOfPoints=5;
 var blockedRadio=[];
 
+function done()
+{
 
+  var wladzaA = 0;
+  var rolaA = 0;
+  var celA = 0;
+  var indywidualnoscA = 0;
+
+  for(var i=1; i<5; i++)
+  {
+
+    for(var j = 0; j<10;j++)
+    {
+      if(document.getElementById(j.toString() + "_1_" + i.toString()).checked == true)
+      {
+    
+        wladzaA += parseInt(document.getElementById( j.toString() + "_1_" + i.toString()).value) ;
+  
+      }
+    }
+  }
+
+  for(var i=1; i<5; i++)
+  {
+
+    for(var j = 0; j<10;j++)
+    {
+      if(document.getElementById(j.toString() + "_2_" + i.toString()).checked == true)
+      {
+    
+        rolaA += parseInt(document.getElementById( j.toString() + "_2_" + i.toString()).value) ;
+
+      }
+    } 
+  }
+
+
+  for(var i=1; i<5; i++)
+  {
+
+    for(var j = 0; j<10;j++)
+    {
+      if(document.getElementById(j.toString() + "_3_" + i.toString()).checked == true)
+      {
+    
+        celA += parseInt(document.getElementById( j.toString() + "_3_" + i.toString()).value) ;
+
+      }
+    }   
+  }
+
+
+  for(var i=1; i<5; i++)
+  {
+
+    for(var j = 0; j<10;j++)
+    {
+      if(document.getElementById(j.toString() + "_4_" + i.toString()).checked == true)
+      {
+    
+        indywidualnoscA += parseInt(document.getElementById( j.toString() + "_4_" + i.toString()).value) ;
+
+      }
+    } 
+  }
+
+
+  if(!isNaN(document.getElementById("punkty_wladzy").innerHTML))
+  {
+    document.getElementById("punkty_wladzy").innerHTML =  wladzaA
+    document.getElementById("punkty_roli").innerHTML =  rolaA
+    document.getElementById("punkty_celu").innerHTML =  celA
+    document.getElementById("punkty_indywidualnosci").innerHTML =  indywidualnoscA
+  }
+ 
+  
+
+}
 
 function display(id) { 
 
