@@ -815,8 +815,7 @@ function display(id) {
    var checkRadio = document.querySelector('input[name="Question"]:checked');
   var e = document.getElementById(id);
 var strUser = e.value;
-  //console.log(strUser); // en   
- // alert (strUser);
+  
   if(checkRadio != null) {
       
           
@@ -840,7 +839,7 @@ var strUser = e.value;
             if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)
             {
              suma+= parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value)
-                //alert(suma);
+                
             }
             
           }
@@ -859,7 +858,7 @@ var strUser = e.value;
           }
         }
 
-        console.log(suma);
+       
 
         //disabledowanie
         for(var k=1;k<numberOfSubsections;k++){ 
