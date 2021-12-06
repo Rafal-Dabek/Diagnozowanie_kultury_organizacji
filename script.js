@@ -70,14 +70,16 @@ function done()
   }
 
 
-  if(!isNaN(document.getElementById("punkty_wladzy").innerHTML))
+  if(!isNaN(document.getElementById("punkty_wladzy").innerHTML)&&(wladzaA+rolaA+celA+indywidualnoscA==100))
   {
     document.getElementById("punkty_wladzy").innerHTML =  wladzaA
     document.getElementById("punkty_roli").innerHTML =  rolaA
     document.getElementById("punkty_celu").innerHTML =  celA
     document.getElementById("punkty_indywidualnosci").innerHTML =  indywidualnoscA
   }
- 
+ else{
+alert("Uzupełnij wszytkie pola!")
+ }
   
 
 }
