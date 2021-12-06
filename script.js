@@ -860,6 +860,13 @@ function display(id) {
               }
             }
             
+            for(i=0;i<blockedRadio.length;i++){//wyrzucanie z listy niepotrzebych el
+              if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked != true&&document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled != true)
+              {
+                if(!document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value== blockedRadio[i])blockedRadio.splice( i)
+              
+              }
+            }
             
           }
         }
@@ -891,7 +898,7 @@ function display(id) {
 
 
 function reset(id) {
-
+  blockedRadio.splice(0,blockedRadio.length)
   for(var k=1;k<numberOfSubsections;k++){//resetowanie
     for(var l=1;l<numberOfPoints;l++){
 
