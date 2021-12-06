@@ -818,19 +818,17 @@ function done3()
 function display(id) { 
 
    var checkRadio = document.querySelector('input[name="Question"]:checked');
-  var e = document.getElementById(id);
-var strUser = e.value;
+   var e = document.getElementById(id);
+   var strUser = e.value;
   
   if(checkRadio != null) {
       
           
-         var question=id.slice(0, 1);
-          
-        
+          var question=id.slice(0, 1);
           var number=id.slice(2, 3);
           var point=id.slice(4, 5);
           if(id.length==6)point=10;
-          var suma=0;
+         
           
           
         
@@ -841,13 +839,13 @@ var strUser = e.value;
            
             if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)
             {
-             //suma+= parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value)
+             
              blockedRadio.push(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value);  
             }
             
           }
         }
-        //console.log(blockedRadio)
+        
         //czyszczenie 
         for(var k=1;k<numberOfSubsections;k++){ 
           for(var l=1;l<numberOfPoints;l++){
