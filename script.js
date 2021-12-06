@@ -110,7 +110,7 @@ function display(id) {
             {
              
              blockedRadio.push(currentPoint.value);  
-             console.log(blockedRadio)
+             
             }
             
           }
