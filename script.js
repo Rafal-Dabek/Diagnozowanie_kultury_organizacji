@@ -829,31 +829,43 @@ var strUser = e.value;
           var numberOfSubsections=5;
           var numberOfQuestions=10;
           var numberOfPoints=5;
+          var blockedRadio=[];
           if(question==0)numberOfSubsections=6;
         
 
 
-        for(var k=1;k<numberOfSubsections;k++){ //sumowanie
+        for(var k=1;k<numberOfSubsections;k++){ //sumowanie //sprawdzanie
           for(var l=0;l<numberOfPoints;l++){
            
             if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)
             {
-             suma+= parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value)
-                
+             //suma+= parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value)
+             blockedRadio.push(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value);  
             }
             
           }
         }
+        console.log(blockedRadio)
         //czyszczenie 
         for(var k=1;k<numberOfSubsections;k++){ 
           for(var l=0;l<numberOfPoints;l++){
-            
-            
-            if(parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value) + suma<=4)
-            {
-              if(!document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled = false
-            
+            for(i=0;i<blockedRadio.length;i++){//wyrzucanie z listy niepotrzebych el
+              if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked != true&&document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled != true)
+              {
+                if(!document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value== blockedRadio[i])blockedRadio.splice( i)
+              
+              }
             }
+            
+
+            for(i=0;i<blockedRadio.length;i++){//czyszczenie buttonów
+              if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value != blockedRadio[i])
+              {
+                if(!document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled = false
+              
+              }
+            }
+            
             
           }
         }
@@ -865,10 +877,12 @@ var strUser = e.value;
           for(var l=0;l<numberOfPoints;l++){
             
             
-            if(parseInt(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value) + suma>4)
-            {
-              if(!document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == true)document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled = true
-            
+            for(i=0;i<blockedRadio.length;i++){
+              if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).value == blockedRadio[i])
+              {
+                if(document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled == false&&document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).checked == false)document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled = true
+              
+              }
             }
             
           }
