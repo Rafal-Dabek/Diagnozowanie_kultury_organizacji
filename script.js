@@ -23,7 +23,7 @@ function display(id) {
           
         
 
-
+          blockedRadio.splice(0,blockedRadio.length)
         for(var k=1;k<numberOfSubsections;k++){  //sprawdzanie
           for(var l=1;l<numberOfPoints;l++){
            var currentPoint=document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  )
@@ -31,6 +31,7 @@ function display(id) {
             {
              
              blockedRadio.push(currentPoint.value);  
+             console.log(blockedRadio)
             }
             
           }
