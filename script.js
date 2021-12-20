@@ -76,6 +76,8 @@ function done()
     document.getElementById("punkty_roli").innerHTML =  rolaA
     document.getElementById("punkty_celu").innerHTML =  celA
     document.getElementById("punkty_indywidualnosci").innerHTML =  indywidualnoscA
+
+    document.getElementById("result_section").style.display = "block";
   }
  else{
 alert("Uzupełnij wszytkie pola!")
